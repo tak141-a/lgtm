@@ -1,11 +1,15 @@
 import click
 
+# エントリポイント
 @click.command()
-def cli():
-    """LGTM画像生成ツール エントリポイント"""
-    lgtm()
+@click.option('__massage', '-m', default='LGTM',
+              show_default=True, help='画像に乗せる文字列')
+@click.argument('keyword')
+def cli(keyword, message):
+    """LGTM画像生成ツール"""
+    lgtm(keyword, message)
     click.echo('lgtm')  # 動作確認用
 
-def lgtm():
+def lgtm(keyword, message):
     # ここにロジックを追加していく
     pass
